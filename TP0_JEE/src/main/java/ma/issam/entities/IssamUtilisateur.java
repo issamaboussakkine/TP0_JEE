@@ -1,8 +1,13 @@
 package ma.issam.entities;
 
+// Issam : Imports JPA pour la persistance
 import jakarta.persistence.*;
 import java.util.Date;
 
+/**
+ * Issam : Entité Utilisateur - Gestion des utilisateurs
+ * Table : utilisateurs_issam
+ */
 @Entity
 @Table(name = "utilisateurs_issam")
 public class IssamUtilisateur {
@@ -27,10 +32,12 @@ public class IssamUtilisateur {
     @Column(name = "date_creation")
     private Date dateCreation;
 
+    // Issam : Constructeur par défaut
     public IssamUtilisateur() {
         this.dateCreation = new Date();
     }
 
+    // Issam : Constructeur avec paramètres
     public IssamUtilisateur(String prenom, String nom, String email, String motDePasse) {
         this.prenom = prenom;
         this.nom = nom;
@@ -39,6 +46,7 @@ public class IssamUtilisateur {
         this.dateCreation = new Date();
     }
 
+    // Issam : Getters et Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getPrenom() { return prenom; }
@@ -52,6 +60,7 @@ public class IssamUtilisateur {
     public Date getDateCreation() { return dateCreation; }
     public void setDateCreation(Date dateCreation) { this.dateCreation = dateCreation; }
 
+    // Issam : toString personnalisé
     @Override
     public String toString() {
         return "IssamUtilisateur [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", email=" + email + "]";

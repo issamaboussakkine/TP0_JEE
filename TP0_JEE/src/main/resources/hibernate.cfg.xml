@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Issam : Configuration Hibernate - TP Inventaire -->
+<!-- Issam : Base de données : issam_inventory -->
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+
+        <!-- Issam : Driver MySQL -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Issam : URL avec ma base personnalisée "issam_inventory" -->
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/issam_inventory?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</property>
+
+        <!-- Issam : Identifiants MySQL -->
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
+
+        <!-- Issam : Dialecte MySQL 8 -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Issam : Afficher les requêtes SQL pour le débogage -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
+
+        <!-- Issam : Création automatique des tables -->
         <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <!-- Issam : Mes entités personnalisées (Issam) -->
         <mapping class="ma.issam.entities.IssamUtilisateur"/>
         <mapping class="ma.issam.entities.IssamProduit"/>
+
     </session-factory>
 </hibernate-configuration>

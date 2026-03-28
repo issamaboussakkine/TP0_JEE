@@ -1,9 +1,14 @@
 package ma.issam.entities;
 
+// Issam : Imports JPA pour la persistance
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Issam : Entité Produit - Gestion des produits de l'inventaire
+ * Table : produits_issam
+ */
 @Entity
 @Table(name = "produits_issam")
 public class IssamProduit {
@@ -31,10 +36,12 @@ public class IssamProduit {
     @Column(name = "date_creation")
     private Date dateCreation;
 
+    // Issam : Constructeur par défaut
     public IssamProduit() {
         this.dateCreation = new Date();
     }
 
+    // Issam : Constructeur avec paramètres
     public IssamProduit(String nom, String description, BigDecimal prix, Integer quantiteStock, String reference) {
         this.nom = nom;
         this.description = description;
@@ -44,9 +51,11 @@ public class IssamProduit {
         this.dateCreation = new Date();
     }
 
+    // Issam : Constructeur avec double (pour compatibilité)
     public IssamProduit(String nom, String description, double prix, int quantite, String sku) {
     }
 
+    // Issam : Getters et Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getNom() { return nom; }
@@ -62,11 +71,13 @@ public class IssamProduit {
     public Date getDateCreation() { return dateCreation; }
     public void setDateCreation(Date dateCreation) { this.dateCreation = dateCreation; }
 
+    // Issam : toString personnalisé
     @Override
     public String toString() {
         return "IssamProduit [id=" + id + ", nom=" + nom + ", prix=" + prix + ", reference=" + reference + "]";
     }
 
+    // Issam : Méthodes utilitaires (pour compatibilité)
     public void setQuantite(int quantite) {
     }
 

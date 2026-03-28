@@ -1,9 +1,21 @@
+# ============================================
+# Issam : Fichier .gitignore personnalisé
+# TP Connexion personnalisé - Issam
+# Date : 28 Mars 2026
+# ============================================
+
+# -------------------------------
+# Issam : Dossiers générés par Maven
+# -------------------------------
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### IntelliJ IDEA ###
+# -------------------------------
+# Issam : Fichiers IntelliJ IDEA
+# Issam : Mon IDE principal pour le TP
+# -------------------------------
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -12,7 +24,9 @@ target/
 *.iml
 *.ipr
 
-### Eclipse ###
+# -------------------------------
+# Issam : Fichiers Eclipse (si quelqu'un utilise Eclipse)
+# -------------------------------
 .apt_generated
 .classpath
 .factorypath
@@ -21,7 +35,9 @@ target/
 .springBeans
 .sts4-cache
 
-### NetBeans ###
+# -------------------------------
+# Issam : Fichiers NetBeans
+# -------------------------------
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -31,8 +47,59 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+# -------------------------------
+# Issam : Fichiers VS Code
+# -------------------------------
 .vscode/
 
-### Mac OS ###
+# -------------------------------
+# Issam : Fichiers Mac OS (ignorer les fichiers système)
+# -------------------------------
 .DS_Store
+
+# -------------------------------
+# Issam : Fichiers de log (générés pendant l'exécution)
+# -------------------------------
+*.log
+logs/
+
+# -------------------------------
+# Issam : Fichiers temporaires
+# -------------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# -------------------------------
+# Issam : Dossiers de sauvegarde
+# -------------------------------
+*.bak
+*.backup
+
+# -------------------------------
+# Issam : Dossiers de configuration personnelle
+# -------------------------------
+.idea/
+*.iml
+out/
+
+# -------------------------------
+# Issam : Dossiers de compilation
+# -------------------------------
+**/build/
+**/out/
+
+# -------------------------------
+# Issam : Fichiers de test (ne pas versionner les résultats)
+# -------------------------------
+**/test-output/
+**/surefire-reports/
+
+# -------------------------------
+# Issam : Fichiers sensibles (ne jamais versionner)
+# -------------------------------
+application-secret.properties
+*.key
+*.p12
+*.jks

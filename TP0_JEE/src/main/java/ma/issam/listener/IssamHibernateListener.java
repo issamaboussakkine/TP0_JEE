@@ -1,42 +1,41 @@
 package ma.issam.listener;
 
+// Issam : Import Hibernate Util
 import ma.issam.util.HibernateUtil;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 
 /**
- * Ecouteur de contexte pour initialiser et fermer Hibernate.
- * Développé par Issam ABOUSSAKKINE pour le TP JEE.
+ * Issam : Ecouteur de contexte pour initialiser et fermer Hibernate
+ * TP JEE - Issam
  */
 @WebListener
 public class IssamHibernateListener implements ServletContextListener {
 
     /**
-     * Méthode appelée au démarrage de l'application.
-     * Initialise la SessionFactory Hibernate.
+     * Issam : Initialisation de Hibernate au démarrage de l'application
      */
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
             HibernateUtil.getSessionFactory();
-            System.out.println("Hibernate initialisé avec succès - Issam ABOUSSAKKINE");
+            System.out.println("Hibernate OK - Issam");
         } catch (Exception e) {
-            System.err.println("Erreur lors de l'initialisation de Hibernate : " + e.getMessage());
+            System.err.println("Erreur Hibernate - Issam: " + e.getMessage());
         }
     }
 
     /**
-     * Méthode appelée à l'arrêt de l'application.
-     * Ferme proprement la SessionFactory Hibernate.
+     * Issam : Fermeture de Hibernate à l'arrêt de l'application
      */
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         try {
             HibernateUtil.shutdown();
-            System.out.println("Hibernate fermé correctement - Issam ABOUSSAKKINE");
+            System.out.println("Hibernate fermé - Issam");
         } catch (Exception e) {
-            System.err.println("Erreur lors de la fermeture de Hibernate : " + e.getMessage());
+            System.err.println("Erreur fermeture Hibernate - Issam: " + e.getMessage());
         }
     }
 }
